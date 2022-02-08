@@ -1,0 +1,13 @@
+
+<h4>Directiva: *ngIf</h4>
+
+<p>Esto es un texto</p>
+
+<p *ngIf="mostrar; else textoAlterno">
+    Texto dentro de la directiva *ngIf
+</p>
+<ng-template #textoAlterno>
+    <h1>
+        Texto dentro de la directiva else
+    </h1>
+</ng-template>
