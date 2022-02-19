@@ -8,6 +8,8 @@
     background-color: #FEE1C7;
     color: #37515F;
     margin-bottom: 3rem;
+    max-width: 300px;
+    margin: 3rem auto 0 auto;
 }
 
 h2 {
@@ -21,11 +23,33 @@ p {
 }
 
 /* tarjeta para contenido opcional */
-.card.opcional {
+.card.defecto {
     min-height: 200px;
     background-color: #C94277;
     color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+}
+
+.card.nurse {
+    min-height: 200px;
+    background-color: #412234;
+    color: #fff;
+}
+
+.card.software-engineer {
+    min-height: 200px;
+    background-color: #050517;
+    color: #CF5C36;
+}
+
+.card.pharmacist {
+    min-height: 200px;
+    background-color: #412234;
+    color: #fff;
+}
+
+
+.card.web-designer {
+    min-height: 200px;
+    background-color: #14080E;
+    color: #49475B;
 }

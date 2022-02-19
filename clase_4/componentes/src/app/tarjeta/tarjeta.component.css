@@ -8,6 +8,8 @@
     background-color: #FEE1C7;
     color: #37515F;
     margin-bottom: 3rem;
+    max-width: 300px;
+    margin: 3rem auto 0 auto;
 }
 
 h2 {
