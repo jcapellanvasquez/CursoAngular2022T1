@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { Persona } from '../models/Persona';
 
 @Component({
@@ -13,11 +13,16 @@ export class TarjetaComponent implements OnInit {
     id:0,
     titulo: '',
     nombre: '',
-    bio: ''
+    bio: '',
+    fechaRegistro: new Date()
   }
 
   @Output()
   public onBorrar: EventEmitter<Persona> = new EventEmitter<Persona>();
+  
+
+  @ViewChild('child')
+  child: any;
 
 
   constructor() { }
@@ -27,5 +32,10 @@ export class TarjetaComponent implements OnInit {
 
   borrar() {
     this.onBorrar.emit(this.persona);
+  }
+
+  accion() {
+    this.child.nativeElement.innerHTML = 'CONTENIDO VIEW CHILD';
+    console.log(this.child.nativeElement)
   }
 }

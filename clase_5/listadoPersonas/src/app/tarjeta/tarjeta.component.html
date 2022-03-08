@@ -3,12 +3,18 @@
       <img src="../../assets/img/avatar.jpg" class="card-img-top" alt="avatar">
       <div class="card-body">
         <h5 class="card-title">{{persona.titulo}}</h5>
-        <h6 class="card-subtitle mb-2 text-muted">{{persona.nombre}}</h6>
-        <p class="card-text">{{persona.bio}}</p>
+        <h6 class="card-subtitle mb-2 text-muted">{{persona.nombre | titlecase}}</h6>
+        <h6 class="card-subtitle mb-2 text-muted">{{'12345678901' | miPipe:2}}</h6>
+        <p class="card-text">{{persona.bio | slice:0:15}}</p>
+        <small class="text-muted">{{persona.fechaRegistro | date:'d/MM/YY'}}</small>
+        <small #child class="text-muted">Child</small>
       </div>
       <div class="card-footer">
         <button class="btn btn-sm btn-danger" (click)="borrar()">
           Borrar
+        </button>
+        <button class="btn btn-sm btn-light" (click)="accion()">
+          Accion
         </button>
       </div>
     </div>

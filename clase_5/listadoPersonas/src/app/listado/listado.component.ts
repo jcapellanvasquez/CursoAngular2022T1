@@ -17,4 +17,8 @@ export class ListadoComponent implements OnInit {
   borrarPersona(persona: Persona) {
     alert('onBorrar click' + persona.nombre)
   }
+
+  public size() {
+    return this.personas.length;
+  }
 }

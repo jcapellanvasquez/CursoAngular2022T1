@@ -7,13 +7,15 @@ import { FormularioComponent } from './formulario/formulario.component';
 import { ListadoComponent } from './listado/listado.component';
 import { TarjetaComponent } from './tarjeta/tarjeta.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MiPipePipe } from './mi-pipe.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     FormularioComponent,
     ListadoComponent,
-    TarjetaComponent
+    TarjetaComponent,
+    MiPipePipe
   ],
   imports: [
     BrowserModule,

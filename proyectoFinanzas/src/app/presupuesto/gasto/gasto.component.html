@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="card mt-5">
+                <div class="card-body">
+                    <h3 class="card-title mb-3">💸 Registro De Gasto</h3>
+                    <form [formGroup]="this.presupuestoService.form">
+
+                        <div class="mb-3">
+                            <label for="monto">Cuenta</label>
+                            <select formControlName="type" class="form-select">
+                                <option *ngFor="let type of types" [value]="type">{{type.name}}</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="monto">Monto</label>
+                            <input formControlName="amount" class="form-control" id="monto" type="number" placeholder="0.00">
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="fecha">Fecha</label>
+                            <input formControlName="date" class="form-control" id="fecha" type="date">
+                        </div>
+
+                        <div class="mb-3">
+                            <button (click)="salvar()" class="btn btn-primary">Salvar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

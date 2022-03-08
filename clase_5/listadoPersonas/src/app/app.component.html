@@ -2,11 +2,18 @@
   <div class="row">
     <div class="col-12">
       <h1 class="my-3">Ejercicio - Listado Personas</h1>
+      <button class="btn btn-primary" (click)="size()">Ver tamano listado</button>
     </div>
   </div>
   <div class="row">
     <div class="col-12">
       <app-formulario [personas]="this.personas"></app-formulario>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      JSON:
+      {{this.personas | json}}
     </div>
   </div>
   <div class="row">

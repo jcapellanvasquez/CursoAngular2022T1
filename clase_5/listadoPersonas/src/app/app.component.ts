@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { ListadoComponent } from './listado/listado.component';
 import { Persona } from './models/Persona';
 
 @Component({
@@ -9,4 +10,12 @@ import { Persona } from './models/Persona';
 export class AppComponent {
   title = 'listadoPersonas';
   public personas: Persona[] = [];
+
+  @ViewChild(ListadoComponent)
+  public lista: ListadoComponent = new ListadoComponent();
+
+  public size() {
+    console.log(this.lista.size())
+  }
 }
+
