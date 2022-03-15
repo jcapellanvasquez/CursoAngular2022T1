@@ -17,6 +17,6 @@ export class GastoComponent implements OnInit {
     this.types = this.presupuestoService.getTypes(Types.GASTO)
   }
   salvar() {
-    this.presupuestoService.salvarTransaccion(Types.GASTO)
+    this.presupuestoService.salvarTransaccion()
   }
 }

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ListadoComponent } from './listado/listado.component';
 import { Route, RouterModule, Routes } from '@angular/router';
 import { PresupuestoService } from '../presupuesto/service/presupuesto.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
@@ -16,7 +17,12 @@ const routes: Routes = [
   ],
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    FormsModule,
+    ReactiveFormsModule
+  ],
+  providers: [
+    PresupuestoService
   ]
 })
 export class TransaccionesModule { }

@@ -11,9 +11,24 @@ export class AppService {
 
   public addTransaccion(tran: Transaccion) {
     this.trasancciones.push(tran);
+    this.setLocal(this.trasancciones);
   }
 
   public getTransacciones() {
-    return this.trasancciones;
+    return this.getLocal();
+  }
+
+  private setLocal(transacciones: Transaccion[]) {
+    localStorage.setItem('transacciones', JSON.stringify(transacciones))
+  }
+
+  private getLocal(): Transaccion[] {
+    const trans = localStorage.getItem("transacciones")
+    if (trans) {
+      return JSON.parse(trans) as Transaccion[];
+    } else {
+      this.setLocal([])
+      return [];
+    }
   }
 }

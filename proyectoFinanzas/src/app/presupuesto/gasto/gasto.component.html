@@ -15,9 +15,19 @@
 
                         <div class="mb-3">
                             <label for="monto">Monto</label>
-                            <input formControlName="amount" class="form-control" id="monto" type="number" placeholder="0.00">
+                            <input formControlName="amount" class="form-control" required
+                                [ngClass]="this.presupuestoService.amount?.touched && this.presupuestoService.amount?.errors ? 'is-invalid' : ''"
+                                id="monto" type="number" placeholder="0.00">
+                            <div *ngIf="this.presupuestoService.amount?.touched && this.presupuestoService['amount']errors['required']"
+                                class="invalid-feedback">
+                                Esto es es obligatorio
+                            </div>
+                            <div *ngIf="this.presupuestoService.amount?.touched && this.presupuestoService['amount']errors['min']"
+                                class="invalid-feedback">
+                                El valor de este campo debe ser mayor a 10
+                            </div>
                         </div>
-                        
+
                         <div class="mb-3">
                             <label for="fecha">Fecha</label>
                             <input formControlName="date" class="form-control" id="fecha" type="date">
